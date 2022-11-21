@@ -1,0 +1,228 @@
+/* --- start of CSS reset --- */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+a img {
+  border: none;
+}
+
+button,
+a {
+  color: inherit;
+}
+
+textarea {
+  resize: none;
+}
+
+button,
+textarea,
+select {
+  appearance: none !important;
+  border-radius: 0;
+}
+
+/* --- end of CSS reset --- */
+
+body {
+  cursor: url("img/racc.png"), auto;
+  font-family: "Nunito", sans-serif;
+  background-color: #58483a;
+  background-image: url("img/hatter2.png") !important;
+  background-size: 400px;
+  background-repeat: round;
+}
+
+img {
+  width: 380px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.pizza-div {
+  background-color: #597718;
+  width: 400px;
+  border-radius: 25px;
+  padding: 10px;
+  color: #f9eec9;
+  margin-top: 10px;
+  position: relative;
+  box-shadow: 0px 0px 10px #3b3027;
+}
+
+.pizza-name {
+  color: #e4b455;
+  text-decoration: underline;
+}
+
+.pizzas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#amount {
+  width: 50px;
+  text-align: center;
+  color: #f9eec9;
+}
+
+label {
+  width: 200px;
+}
+
+.add-to-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: #f9eec9;
+  color: #597718;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  box-shadow: 0 0 10px #1c6340;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 320px auto;
+  margin-bottom: 10px;
+}
+
+.order {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  background-color: rgb(122, 50, 64);
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px #3b3027;
+  margin: 10px 0 0 10px;
+  color: #f9eec9;
+  width: 300px;
+  height: fit-content;
+}
+
+#order-name,
+#order-phone,
+#order-email {
+  width: 240px;
+  height: 50px;
+  margin-top: 20px;
+}
+#order-address {
+  width: 240px;
+  height: 70px;
+  margin-top: 20px;
+}
+
+.order-item {
+  display: grid;
+  grid-template-columns: auto 20px 20px 50px 50px;
+  /* position: relative; */
+}
+
+.multiply {
+  text-align: center;
+}
+
+.pizza-order-amount {
+  text-align: center;
+}
+
+.remove-order {
+  border: 1px solid #f9eec9;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+textarea {
+  color: #f9eec9;
+}
+
+::placeholder {
+  color: #f9eec9;
+  opacity: 0.7;
+}
+
+.btn-order {
+  background-color: #597718;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #3b3027;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.cart-div {
+  margin-top: 20px;
+}
+
+.cart-total {
+  text-align: end;
+  border-top: 1px solid #f9eec9;
+  margin-top: 20px;
+  padding-top: 5px;
+}
+
+.cart-title {
+  text-align: center;
+  border-bottom: 1px solid #f9eec9;
+}
+
+form {
+  margin-top: 25px;
+  border: 2px solid #f9eec9;
+  border-radius: 25px;
+  padding: 10px;
+  position: relative;
+}
+
+/* loader */
+.loader {
+  display: flex;
+  flex-direction: column;
+  color: #e4b455;
+  background: #92284c;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: all ease-out 2s;
+  z-index: -10000;
+}

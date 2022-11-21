@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/style.css" />
+    <script src="public/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bit by bit</title>
+  </head>
+  <body>
+    <!-- loader -->
+    <!-- <div class="loader">
+      <h1>Köszöntjük a Bit by bit oldalán!</h1>
+      <img src="public/img/loader.gif" />
+    </div> -->
+    <div id="root">
+      <div class="order">
+        <h1 class="cart-title">Kosár:</h1>
+        <div class="cart-div"></div>
+        <div class="cart-total">
+          <span class="cart-total-name">Fizetendő:</span>
+          <span class="cart-total-price">0 €</span>
+        </div>
+        <div class="order-details">
+          <form class="form" action="">
+            <textarea name="name" id="order-name" placeholder="Név"></textarea>
+            <textarea
+              name="address"
+              id="order-address"
+              placeholder="Cím (irányítószám, város, utca, házszám)"
+            ></textarea>
+            <textarea
+              name="phone"
+              type="number"
+              id="order-phone"
+              placeholder="Telefonszám"
+            ></textarea>
+            <textarea
+              name="email"
+              id="order-email"
+              placeholder="Email"
+            ></textarea>
+            <button class="btn-order">&#10004;</button>
+          </form>
+        </div>
+      </div>
+      <div class="pizzas"></div>
+    </div>
+  </body>
+</html>
