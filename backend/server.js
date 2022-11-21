@@ -41,15 +41,16 @@ app.post("/pizza-order", (req, res) => {
   );
 });
 
-app.delete("/api/delete-image/:name", (req, res) => {
+app.delete("/api/delete-pizza/:name", (req, res) => {
   const paramName = req.params.name;
 
   fs.readFile(`${__dirname}/data/pizzak.json`, (err, data) => {
       if(err) {
           console.log(err)
       } else {
-          const dataToDelete = JSON.parse(data).filter(img => img.name === paramName);
-          const pictureUploadPath = `${__dirname}/../frontend/public/img${dataToDelete[0].url}`;
+          const dataToDelete = JSON.parse(data).filter(pizza => pizza.name === paramName);
+          const pictureUploadPath = `${__dirname}/../frontend/public/img${dataToDelete[0].image}`;
+          console.log(pictureUploadPath)
           //console.log(pictureUploadPath)
 
           if (fs.existsSync(pictureUploadPath)) {
@@ -62,8 +63,9 @@ app.delete("/api/delete-image/:name", (req, res) => {
               }
 
           const pizzaData = JSON.parse(data).filter(pizza => pizza.name != paramName);
+          console.log(pizzaData)
 
-          fs.writeFile("pizzak.json", JSON.stringify(pizzaData, null, 4), (error) => {
+          fs.writeFile(`${__dirname}/data/pizzak.json`, JSON.stringify(pizzaData, null, 4), (error) => {
               if(error) {
                   console.log(error);
               } else {
@@ -77,4 +79,5 @@ app.delete("/api/delete-image/:name", (req, res) => {
   });
 
 return res.status(200).send("done");
+
 });

@@ -180,7 +180,7 @@ async function loadEvent() {
     const toDeletePizzaDiv = event.target.parentElement
     const pizzaToDelete = toDeletePizzaDiv.querySelector(".pizza-name").innerText.split(" ")[0];
 
-    fetch(`/api/delete-image/${pizzaToDelete}`, {
+    fetch(`/api/delete-pizza/${pizzaToDelete}`, {
       method: 'DELETE',
     })
       .then(location.reload())
