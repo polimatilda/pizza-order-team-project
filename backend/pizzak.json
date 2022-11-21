@@ -1,0 +1,38 @@
+[
+    {
+        "name": "California",
+        "ingredients": "sonka, gomba, kukorica, paradicsom, sajt",
+        "image": "/california.jpg",
+        "price": "7.90 €"
+    },
+    {
+        "name": "Diavolo",
+        "ingredients": "paradicsom, csípős szalámi, jalapeno, sajt",
+        "image": "/diavolo.jpg",
+        "price": "7.90 €"
+    },
+    {
+        "name": "Garlic",
+        "ingredients": "fokhagyma, sajt, oregano",
+        "image": "/garlic.jpg",
+        "price": "6.90 €"
+    },
+    {
+        "name": "Négysajtos",
+        "ingredients": "trapista, feta, füstölt, camembert sajt",
+        "image": "/negysajtos.jpg",
+        "price": "7.90 €"
+    },
+    {
+        "name": "Bolognai",
+        "ingredients": "darált marhahús, bolognai alap, sajt",
+        "image": "/bolognai.jpg",
+        "price": "6.90 €"
+    },
+    {
+        "name": "Hawaii",
+        "ingredients": "sajt, sonka, ananász",
+        "image": "/hawaii.jpg",
+        "price": "6.90 €"
+    }
+]

@@ -48,7 +48,7 @@ app.delete("/api/delete-image/:name", (req, res) => {
       if(err) {
           console.log(err)
       } else {
-          const dataToDelete = JSON.parse(data).filter(img => img.id ===name);
+          const dataToDelete = JSON.parse(data).filter(img => img.name === paramName);
           const pictureUploadPath = `${__dirname}/../frontend/public/img${dataToDelete[0].url}`;
           //console.log(pictureUploadPath)
 
