@@ -81,3 +81,35 @@ app.delete("/api/delete-pizza/:name", (req, res) => {
 return res.status(200).send("done");
 
 });
+
+app.post(`/api/disable-pizza/:name`, (req, res) => {
+  const paramName = req.params.name; 
+  console.log(paramName)
+
+  fs.readFile(`${__dirname}/data/pizzak.json`, (err, data) => {
+    if(err) {
+        console.log(err)
+    } else {
+        const pizzaData = JSON.parse(data);
+
+        for (let i = 0; i < pizzaData.length; i++) {
+          if (pizzaData[i].name === paramName) {
+              if(pizzaData[i].isActive === true) {
+                pizzaData[i].isActive = false
+              } else {
+                pizzaData[i].isActive = true
+              }
+          }
+      }
+
+      fs.writeFile(`${__dirname}/data/pizzak.json`, JSON.stringify(pizzaData, null, 2), (err) => {
+          if (err) {
+              console.log('error', err)
+              return res.status(500).send(err)
+          } else {
+              return res.send({ response: "done" })
+          }
+      })
+    }
+  })
+});

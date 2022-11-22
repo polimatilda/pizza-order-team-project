@@ -34,12 +34,16 @@ async function loadEvent() {
 
   const pizzas = await fetchPizzas();
   console.log(pizzas);
-  pizzas.map((pizza) =>
-    pizzasDivElement.insertAdjacentHTML(
-      "beforeend",
-      pizzaComponent(pizza.name, pizza.ingredients, pizza.image, pizza.price)
-    )
-  );
+  pizzas.map((pizza) => {
+      pizzasDivElement.insertAdjacentHTML(
+          "beforeend",
+          pizzaComponent(pizza.name, pizza.ingredients, pizza.image, pizza.price)
+      )
+
+      if(pizza.isActive === false) {
+        document.querySelector('.pizza-div').classList.add("disabled")
+      }
+  });
 
   const addToOrderButtons = document.querySelectorAll(".add-to-order");
   for (let i = 0; i < addToOrderButtons.length; i++) {
@@ -194,26 +198,44 @@ async function loadEvent() {
   const rootElement = document.querySelector('#root');
   rootElement.insertAdjacentHTML
 
-  pizzas.map((pizza) =>
+  pizzas.map((pizza) => {
     rootElement.insertAdjacentHTML(
       "afterend", `
         <button class="disable-pizza">${pizza.name} pizza aktiválás/deaktiválás<button>
       `
     )
-  );
+
+    if(pizza.isActive === false) {
+      let button = document.querySelector(".disable-pizza")
+      button.classList.add("disabled-button");
+    }
+  });
 
   const pizzaNames = document.querySelectorAll(".pizza-name");
   const disAbleButtons = document.querySelectorAll(".disable-pizza");
-  disAbleButtons.forEach(button => button.addEventListener("click", (event) => {
+  disAbleButtons.forEach(button => button.addEventListener("click", () => {
 
     const buttonToDisablePizza = button.innerText.split(" ")[0];
 
     for(let i = 0; i < pizzaNames.length; i++){
       if(pizzaNames[i].innerText.split(" ")[0] === buttonToDisablePizza) {
+        
+        const isPizzaAble = {
+          "name": pizzaNames[i].innerText.split(" ")[0],
+        }
+        
+        fetch(`/api/disable-pizza/${buttonToDisablePizza}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(isPizzaAble)
+        })
+
         pizzaNames[i].parentElement.classList.toggle("disabled")
       };
     };
-
+    
     button.classList.toggle("disabled-button");
 
   }));

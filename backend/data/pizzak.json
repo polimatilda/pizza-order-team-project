@@ -1,57 +1,51 @@
 [
-    {
-        "name": "Margherita",
-        "ingredients": "paradicsom, mozzarella sajt, fokhagyma, friss bazsalikom, olívaolaj",
-        "image": "/margherita.jpg",
-        "price": "5.90 €",
-        "active": true
-    },
-
-    {
-        "name": "California",
-        "ingredients": "sonka, gomba, kukorica, paradicsom, sajt",
-        "image": "/california.jpg",
-        "price": "7.90 €",
-        "active": true
-    },
-
-    {
-        "name": "Diavolo",
-        "ingredients": "paradicsom, csípős szalámi, jalapeno, sajt",
-        "image": "/diavolo.jpg",
-        "price": "7.90 €",
-        "active": true
-    },
-
-    {
-        "name": "Garlic",
-        "ingredients": "fokhagyma, sajt, oregano",
-        "image": "/garlic.jpg",
-        "price": "6.90 €",
-        "active": true
-    },
-
-    {
-        "name": "Négysajtos",
-        "ingredients": "trapista, feta, füstölt, camembert sajt",
-        "image": "/negysajtos.jpg",
-        "price": "7.90 €",
-        "active": true
-    },
-
-    {
-        "name": "Bolognai",
-        "ingredients": "darált marhahús, bolognai alap, sajt",
-        "image": "/bolognai.jpg",
-        "price": "6.90 €",
-        "active": true
-    },
-
-    {
-        "name": "Hawaii",
-        "ingredients": "sajt, sonka, ananász",
-        "image": "/hawaii.jpg",
-        "price": "6.90 €",
-        "active": true
-    }
+  {
+    "name": "Margherita",
+    "ingredients": "paradicsom, mozzarella sajt, fokhagyma, friss bazsalikom, olívaolaj",
+    "image": "/margherita.jpg",
+    "price": "5.90 €",
+    "isActive": true
+  },
+  {
+    "name": "California",
+    "ingredients": "sonka, gomba, kukorica, paradicsom, sajt",
+    "image": "/california.jpg",
+    "price": "7.90 €",
+    "isActive": true
+  },
+  {
+    "name": "Diavolo",
+    "ingredients": "paradicsom, csípős szalámi, jalapeno, sajt",
+    "image": "/diavolo.jpg",
+    "price": "7.90 €",
+    "isActive": true
+  },
+  {
+    "name": "Garlic",
+    "ingredients": "fokhagyma, sajt, oregano",
+    "image": "/garlic.jpg",
+    "price": "6.90 €",
+    "isActive": true
+  },
+  {
+    "name": "Négysajtos",
+    "ingredients": "trapista, feta, füstölt, camembert sajt",
+    "image": "/negysajtos.jpg",
+    "price": "7.90 €",
+    "isActive": true
+  },
+  {
+    "name": "Bolognai",
+    "ingredients": "darált marhahús, bolognai alap, sajt",
+    "image": "/bolognai.jpg",
+    "price": "6.90 €",
+    "isActive": true
+  },
+  {
+    "name": "Hawaii",
+    "ingredients": "sajt, sonka, ananász",
+    "image": "/hawaii.jpg",
+    "price": "6.90 €",
+    "isActive": true
+  }
 ]
