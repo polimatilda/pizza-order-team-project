@@ -168,6 +168,8 @@ async function loadEvent() {
 
   // admin felület
 
+  //delete
+
   let pizzaDivs = document.querySelectorAll(".pizza-div");
   pizzaDivs.forEach(pizzaDiv => pizzaDiv.insertAdjacentHTML("beforeend", `
   <button class="delete-pizza">Törlés</button>
@@ -186,6 +188,35 @@ async function loadEvent() {
       .then(location.reload())
 
   }))
+
+  //able, disable
+
+  const rootElement = document.querySelector('#root');
+  rootElement.insertAdjacentHTML
+
+  pizzas.map((pizza) =>
+    rootElement.insertAdjacentHTML(
+      "afterend", `
+        <button class="disable-pizza">${pizza.name} pizza aktiválás/deaktiválás<button>
+      `
+    )
+  );
+
+  const pizzaNames = document.querySelectorAll(".pizza-name");
+  const disAbleButtons = document.querySelectorAll(".disable-pizza");
+  disAbleButtons.forEach(button => button.addEventListener("click", (event) => {
+
+    const buttonToDisablePizza = button.innerText.split(" ")[0];
+
+    for(let i = 0; i < pizzaNames.length; i++){
+      if(pizzaNames[i].innerText.split(" ")[0] === buttonToDisablePizza) {
+        pizzaNames[i].parentElement.classList.toggle("disabled")
+      };
+    };
+
+    button.classList.toggle("disabled-button");
+
+  }));
 
 };
 
