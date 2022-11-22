@@ -226,3 +226,18 @@ form {
   transition: all ease-out 2s;
   z-index: -10000;
 }
+
+.disable-pizza {
+  margin: 30px;
+  background-color: #1c6340;
+  color: #f9eec9;
+  padding: 10px;
+}
+
+.disabled {
+  display: none;
+}
+
+.disabled-button {
+  background-color: #92284c;
+}

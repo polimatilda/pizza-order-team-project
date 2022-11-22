@@ -63,6 +63,7 @@ async function loadEvent() {
         return;
       }
     }
+  
 
     orderSummary.insertAdjacentHTML(
       "afterbegin",
@@ -90,7 +91,7 @@ async function loadEvent() {
       buttonClicked.parentElement.remove();
       updateCartTotal();
     }
-
+  }
 
     const sendOrderButton = document.querySelector(".btn-order");
     sendOrderButton.addEventListener("click", function (event) {
@@ -144,7 +145,6 @@ async function loadEvent() {
       updateCartTotal();
       alert("Rendelését rögzítettük! Köszönjük a vásárlást!");
     }
-  }
 
   function updateCartTotal() {
     let total = 0;
