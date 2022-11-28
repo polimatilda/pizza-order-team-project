@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/style.css" />
+    <script src="public/admin.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <title>Bit by bit admin</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="order">
+        <h1 class="cart-title">Új ajánlat:</h1>
+        <div class="cart-div"></div>
+        <div class="order-details">
+          <form class="form" action="">
+            <input placeholder="" type="file" name="file" />
+            <textarea
+              name="name"
+              id="order-name"
+              placeholder="Pizza neve"
+            ></textarea>
+            <textarea
+              name="ingredients"
+              id="order-address"
+              placeholder="Összetevők"
+            ></textarea>
+            <textarea name="price" id="order-email" placeholder="Ár"></textarea>
+            <button class="btn-order">&#10004;</button>
+          </form>
+        </div>
+      </div>
+      <div class="pizzas"></div>
+    </div>
+  </body>
+</html>

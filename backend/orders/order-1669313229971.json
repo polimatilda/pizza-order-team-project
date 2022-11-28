@@ -1,0 +1,28 @@
+[
+  {
+    "pizzaName": "Bolognai pizza",
+    "orderedAmount": 2
+  },
+  {
+    "pizzaName": "Négysajtos pizza",
+    "orderedAmount": 1
+  },
+  {
+    "pizzaName": "Diavolo pizza",
+    "orderedAmount": 1
+  },
+  {
+    "pizzaName": "Margherita pizza",
+    "orderedAmount": 1
+  },
+  {
+    "total": "35.5 €",
+    "name": "Kiss Mariann",
+    "address": "9823, Kalocsa, Wesselényi utca 12.",
+    "phone": "+36706459887",
+    "email": "kismari@gmail.com"
+  },
+  {
+    "id": 1669313229971
+  }
+]

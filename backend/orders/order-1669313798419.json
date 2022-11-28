@@ -1,0 +1,32 @@
+[
+  {
+    "pizzaName": "Margherita pizza",
+    "orderedAmount": 1
+  },
+  {
+    "pizzaName": "California pizza",
+    "orderedAmount": 1
+  },
+  {
+    "pizzaName": "Diavolo pizza",
+    "orderedAmount": 1
+  },
+  {
+    "pizzaName": "Garlic pizza",
+    "orderedAmount": 1
+  },
+  {
+    "pizzaName": "Hawaii pizza",
+    "orderedAmount": 4
+  },
+  {
+    "total": "56.2 €",
+    "name": "Winch Eszter",
+    "address": "3927 Kispalota, Nagypalota körút 29. 2. emelet 12.",
+    "phone": "+37309984356",
+    "email": "esztike03@citromail.com"
+  },
+  {
+    "id": 1669313798419
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "pizzaName": "California pizza",
+    "orderedAmount": 2
+  },
+  {
+    "pizzaName": "Margherita pizza",
+    "orderedAmount": 1
+  },
+  {
+    "total": "21.7 €",
+    "name": "Tas Huba",
+    "address": "2113, Kukutyin, Villany utca, 13/B",
+    "phone": "+36208367664",
+    "email": "tashuba@gmail.com"
+  },
+  {
+    "id": 1669293765460
+  }
+]

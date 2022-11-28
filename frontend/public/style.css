@@ -83,7 +83,9 @@ label {
   width: 200px;
 }
 
-.add-to-order {
+.add-to-order
+/* .switch-stock,
+.modify-button */ {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,6 +206,10 @@ form {
   position: relative;
 }
 
+.disabled {
+  display: none;
+}
+
 /* loader */
 .loader {
   display: flex;
@@ -227,17 +233,116 @@ form {
   z-index: -10000;
 }
 
-.disable-pizza {
-  margin: 30px;
-  background-color: #1c6340;
-  color: #f9eec9;
-  padding: 10px;
-}
-
-.disabled {
-  display: none;
-}
+/* admin page */
 
 .disabled-button {
   background-color: #92284c;
+}
+
+.mod-input {
+  color: orange;
+  width: 250px;
+  height: 30px;
+  display: block;
+}
+
+.switch-stock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f9eec9;
+  color: #f9eec9;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  right: 90px;
+  bottom: 10px;
+  box-shadow: 0 0 10px #1c6340;
+}
+.remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f9eec9;
+  color: #f9eec9;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  box-shadow: 0 0 10px #1c6340;
+}
+
+.modify-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border: 3px solid #f9eec9;
+  color: #f9eec9;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+  box-shadow: 0 0 10px #1c6340;
+}
+
+.switch-stock:hover, .remove:hover, .modify-button:hover {
+  background-color: #92284c;
+}
+
+/* orders listing */
+
+.refresh-div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-btn {
+  background-color: #597718;
+  padding: 10px;
+  margin: 20px 0px;
+  border-radius: 25px;
+  color: #f9eec9;
+}
+
+.orders {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px;
+  gap: 30px;
+}
+
+.order-list-element {
+  background-color: #597718;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 10px;
+  color: #f9eec9;
+  margin-top: 10px;
+  box-shadow: 0px 0px 10px #3b3027;
+  gap: 5px;
+}
+
+.order-list-element h2,
+h1 {
+  color: #e4b455;
+  text-decoration: underline;
 }

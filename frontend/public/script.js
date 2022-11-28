@@ -24,25 +24,29 @@ const fetchPizzas = async () => {
 
 async function loadEvent() {
   // loader
-  // function loader() {
-  //   document.querySelector(".loader").classList.add("fade-out");
-  // }
-  // function fadeOut() {
-  //   setInterval(loader, 5000);
-  // }
-  // window.onload = fadeOut();
+  function loader() {
+    document.querySelector(".loader").classList.add("fade-out");
+  }
+  function fadeOut() {
+    setInterval(loader, 5000);
+  }
+  window.onload = fadeOut();
 
   const pizzas = await fetchPizzas();
   console.log(pizzas);
   pizzas.map((pizza) => {
-      pizzasDivElement.insertAdjacentHTML(
-          "beforeend",
-          pizzaComponent(pizza.name, pizza.ingredients, pizza.image, pizza.price)
-      )
-
-      if(pizza.isActive === false) {
-        document.querySelector('.pizza-div').classList.add("disabled")
+    pizzasDivElement.insertAdjacentHTML(
+      "beforeend",
+      pizzaComponent(pizza.name, pizza.ingredients, pizza.image, pizza.price)
+    );
+    if (pizza.isActive === false) {
+      const pizzaDivs = document.querySelectorAll(".pizza-div");
+      for(let i = 0; i < pizzaDivs.length; i++) {
+        if(pizzaDivs[i].querySelector(".pizza-name").innerText.split(" pizza")[0] === pizza.name) {
+          pizzaDivs[i].classList.add("disabled");
+        }
       }
+    }
   });
 
   const addToOrderButtons = document.querySelectorAll(".add-to-order");
@@ -67,7 +71,6 @@ async function loadEvent() {
         return;
       }
     }
-  
 
     orderSummary.insertAdjacentHTML(
       "afterbegin",
@@ -97,58 +100,58 @@ async function loadEvent() {
     }
   }
 
-    const sendOrderButton = document.querySelector(".btn-order");
-    sendOrderButton.addEventListener("click", function (event) {
-      event.preventDefault();
-      let newOrder = [];
-      let pizzaOrders = document.querySelectorAll(".order-item");
-      let pizzaNames = document.querySelectorAll(".pizza-order-name");
-      let pizzaAmounts = document.querySelectorAll(".pizza-order-amount");
-      for (let i = 0; i < pizzaOrders.length; i++) {
-        let currentPizzaOrder = {
-          pizzaName: `${pizzaNames[i].innerText}`,
-          orderedAmount: parseInt(pizzaAmounts[i].innerText),
-        };
-
-        newOrder.push(currentPizzaOrder);
-      }
-
-      const totalPrice = document.querySelector(".cart-total-price").innerText;
-      const clientName = document.querySelector("#order-name").value;
-      const clientAddress = document.querySelector("#order-address").value;
-      const clientPhone = document.querySelector("#order-phone").value;
-      const clientEmail = document.querySelector("#order-email").value;
-
-      let clientDetails = {
-        total: totalPrice,
-        name: clientName,
-        address: clientAddress,
-        phone: clientPhone,
-        email: clientEmail,
+  const sendOrderButton = document.querySelector(".btn-order");
+  sendOrderButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    let newOrder = [];
+    let pizzaOrders = document.querySelectorAll(".order-item");
+    let pizzaNames = document.querySelectorAll(".pizza-order-name");
+    let pizzaAmounts = document.querySelectorAll(".pizza-order-amount");
+    for (let i = 0; i < pizzaOrders.length; i++) {
+      let currentPizzaOrder = {
+        pizzaName: `${pizzaNames[i].innerText}`,
+        orderedAmount: parseInt(pizzaAmounts[i].innerText),
       };
 
-      newOrder.push(clientDetails);
-
-      console.log(newOrder);
-
-      fetch(`/pizza-order`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newOrder),
-      });
-      orderClicked();
-    });
-
-    function orderClicked() {
-      let cartItems = document.querySelectorAll(".order-item");
-      cartItems.forEach(item => item.remove());
-      const inputFields = document.querySelectorAll("textarea");
-      inputFields.forEach(item => item.value = "");
-      updateCartTotal();
-      alert("Rendelését rögzítettük! Köszönjük a vásárlást!");
+      newOrder.push(currentPizzaOrder);
     }
+
+    const totalPrice = document.querySelector(".cart-total-price").innerText;
+    const clientName = document.querySelector("#order-name").value;
+    const clientAddress = document.querySelector("#order-address").value;
+    const clientPhone = document.querySelector("#order-phone").value;
+    const clientEmail = document.querySelector("#order-email").value;
+
+    let clientDetails = {
+      total: totalPrice,
+      name: clientName,
+      address: clientAddress,
+      phone: clientPhone,
+      email: clientEmail,
+    };
+
+    newOrder.push(clientDetails);
+
+    console.log(newOrder);
+
+    fetch(`/pizza-order`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newOrder),
+    });
+    orderClicked();
+  });
+
+  function orderClicked() {
+    let cartItems = document.querySelectorAll(".order-item");
+    cartItems.forEach((item) => item.remove());
+    const inputFields = document.querySelectorAll("textarea");
+    inputFields.forEach((item) => (item.value = ""));
+    updateCartTotal();
+    alert("Rendelését rögzítettük! Köszönjük a vásárlást!");
+  }
 
   function updateCartTotal() {
     let total = 0;
@@ -168,78 +171,6 @@ async function loadEvent() {
 
     document.querySelector(".cart-total-price").innerText = total + " €";
   }
-
-
-  // admin felület
-
-  //delete
-
-  let pizzaDivs = document.querySelectorAll(".pizza-div");
-  pizzaDivs.forEach(pizzaDiv => pizzaDiv.insertAdjacentHTML("beforeend", `
-  <button class="delete-pizza">Törlés</button>
-`)
-  );
-
-  let pizzaDelBtn = document.querySelectorAll(".delete-pizza");
-  pizzaDelBtn.forEach(delBtn => delBtn.addEventListener("click", (event) => {
-
-    const toDeletePizzaDiv = event.target.parentElement
-    const pizzaToDelete = toDeletePizzaDiv.querySelector(".pizza-name").innerText.split(" ")[0];
-
-    fetch(`/api/delete-pizza/${pizzaToDelete}`, {
-      method: 'DELETE',
-    })
-      .then(location.reload())
-
-  }))
-
-  //able, disable
-
-  const rootElement = document.querySelector('#root');
-  rootElement.insertAdjacentHTML
-
-  pizzas.map((pizza) => {
-    rootElement.insertAdjacentHTML(
-      "afterend", `
-        <button class="disable-pizza">${pizza.name} pizza aktiválás/deaktiválás<button>
-      `
-    )
-
-    if(pizza.isActive === false) {
-      let button = document.querySelector(".disable-pizza")
-      button.classList.add("disabled-button");
-    }
-  });
-
-  const pizzaNames = document.querySelectorAll(".pizza-name");
-  const disAbleButtons = document.querySelectorAll(".disable-pizza");
-  disAbleButtons.forEach(button => button.addEventListener("click", () => {
-
-    const buttonToDisablePizza = button.innerText.split(" ")[0];
-
-    for(let i = 0; i < pizzaNames.length; i++){
-      if(pizzaNames[i].innerText.split(" ")[0] === buttonToDisablePizza) {
-        
-        const isPizzaAble = {
-          "name": pizzaNames[i].innerText.split(" ")[0],
-        }
-        
-        fetch(`/api/disable-pizza/${buttonToDisablePizza}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(isPizzaAble)
-        })
-
-        pizzaNames[i].parentElement.classList.toggle("disabled")
-      };
-    };
-    
-    button.classList.toggle("disabled-button");
-
-  }));
-
-};
+}
 
 window.addEventListener("load", loadEvent);
